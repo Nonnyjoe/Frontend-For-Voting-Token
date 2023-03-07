@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Header from "./components/header";
+import votingTokenABI from "./utils/votingTokenABI.json";
+import { useContractRead } from "wagmi";
+import BallotForm from "./components/BallotForm";
+import DisplayPools from "./components/DisplayPools";
 function App() {
+  // const TokenDetails = {
+  //   address: "0x62f9d3a871cd539eef606cf3cdf77c30386128ab",
+  //   abi: votingTokenABI,
+  // };
+  // const {
+  //   data: totalSupplyData,
+  //   isError,
+  //   isLoading,
+  // } = useContractRead({
+  //   ...TokenDetails,
+  //   functionName: "totalSupply",
+  // });
+
+  // if (totalSupplyData) {
+  //   console.log(totalSupplyData.toString());
+  // }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <BallotForm />
+      <DisplayPools />
     </div>
   );
 }
